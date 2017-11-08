@@ -2,9 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 // Tangram:
-import { TangramModule, TgButtonsModule } from '@trademe/tangram';
+import { TangramModule } from '@trademe/tangram';
 
 import { AppComponent } from './app.component';
+import { SlideComponent } from './slide/slide.component';
+import { APP_IMPORTS } from './app.imports';
 
 
 @NgModule({
@@ -12,9 +14,9 @@ import { AppComponent } from './app.component';
     AppComponent
   ],
   imports: [
+    ...APP_IMPORTS,
     BrowserModule,
     TangramModule.forRoot(),
-    TgButtonsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

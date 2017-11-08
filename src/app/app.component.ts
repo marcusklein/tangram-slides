@@ -13,7 +13,9 @@ export class AppComponent implements OnInit {
   constructor () {}
 
   ngOnInit () {
-    Reveal.initialize();
+    Reveal.initialize({
+      display: 'flex'
+    });
   }
 
 
