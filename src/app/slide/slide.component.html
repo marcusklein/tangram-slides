@@ -1,15 +1,14 @@
-<tg-row>
-  <ng-content
-    select="slide-header"></ng-content>
-</tg-row>
-<tg-row>
-  <ng-content
-    select="slide-body"></ng-content>
-</tg-row>
+<div
+  class="slide">
+      <div
+        class="view-area">
+        <ng-content
+          select="slide-header"></ng-content>
 
-<ng-content></ng-content>
+        <ng-content
+          select="slide-body"></ng-content>
 
-<tg-row>
-  <ng-content
-    select="slide-footer"></ng-content>
-</tg-row>
+        <ng-content
+          select="slide-footer"></ng-content>
+      </div>
+</div>

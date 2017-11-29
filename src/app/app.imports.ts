@@ -1,9 +1,15 @@
 // Imports
 import { SlideModule } from './slide/slide.module';
-import { TgButtonsModule } from '@trademe/tangram';
+import { TgButtonsModule, TgSvgModule, TgGridModule } from '@trademe/tangram';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserModule } from '@angular/platform-browser';
 
 export const APP_IMPORTS = [
   SlideModule,
   // Tangram
-  TgButtonsModule
+  TgButtonsModule,
+  TgSvgModule,
+  TgGridModule,
+
+  BrowserModule, BrowserAnimationsModule
 ];

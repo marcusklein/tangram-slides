@@ -1,0 +1,14 @@
+@import '~@trademe/tangram/tools/env';
+
+.slide {
+  width: 100vw;
+  height: 100vh;
+}
+
+.view-area {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: $unit * 2;
+  padding-bottom: $unit * 2;
+}

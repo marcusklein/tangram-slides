@@ -1,22 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnChanges, OnInit, Renderer2 } from '@angular/core';
+import { KeyboardService } from './services/keyboardEvent.service';
+import { NavigationService } from './services/navigation.service';
 
-import * as Reveal from 'reveal';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
-
-
-  constructor () {}
-
-  ngOnInit () {
-    Reveal.initialize({
-      display: 'flex'
-    });
-  }
-
+export class AppComponent {
 
 }

@@ -1,0 +1,17 @@
+@import '~@trademe/tangram/tools/env';
+
+.app-header {
+  width: 100%;
+  height: $unit * 2;
+  background-color: $tip-top-300;
+}
+
+.slide-container {
+  display: flex;
+  flex-flow:row;
+  height:100%;
+  position:absolute;
+  left: 0;
+  width:100%;
+  transition: 0.5s;
+}
