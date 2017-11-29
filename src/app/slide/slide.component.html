@@ -2,6 +2,11 @@
   class="slide">
       <div
         class="view-area">
+        <ng-container
+          ngProjectAs="slide-header">
+          <ng-content
+            select="slide-header"></ng-content>
+        </ng-container>
         <ng-content
           select="slide-header"></ng-content>
 

@@ -1,5 +1,4 @@
 import { ElementRef, Injectable, Renderer2 } from '@angular/core';
-import { animate, state, style, transition, trigger } from '@angular/animations';
 
 
 @Injectable()
@@ -13,9 +12,11 @@ export class NavigationService {
     this.slidesContainer = slidesContainer;
   }
 
-  public goToSlide (slide: number) {
+  public goToSlide (slide: number, transition: number = 0.5) {
     const newPosition = -100 * slide + 'vw';
+    this._renderer.removeStyle(this.slidesContainer, 'transition');
     this._renderer.removeStyle(this.slidesContainer, 'left');
+    this._renderer.setStyle(this.slidesContainer, 'transition', transition + 's');
     this._renderer.setStyle(this.slidesContainer, 'left', newPosition);
   }
 

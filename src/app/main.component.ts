@@ -1,6 +1,7 @@
 import {
   AfterContentInit,
-  Component, ContentChildren, ElementRef, HostBinding, Input, OnChanges, OnInit, QueryList, Renderer2, SimpleChanges,
+  Component, ContentChildren, ElementRef, forwardRef, HostBinding, Input, OnChanges, OnInit, QueryList, Renderer2,
+  SimpleChanges,
   ViewChildren
 } from '@angular/core';
 import { SlideComponent } from './slide/slide.component';
@@ -21,7 +22,7 @@ export class MainComponent implements OnInit, AfterContentInit {
 
   private _slideContainer: ElementRef;
 
-  @ContentChildren(SlideComponent) private _slides: QueryList<SlideComponent>;
+  @ViewChildren(SlideComponent) private _slides: QueryList<SlideComponent>;
 
   constructor (
     private _keyboardService: KeyboardService,
@@ -36,22 +37,21 @@ export class MainComponent implements OnInit, AfterContentInit {
   }
 
   public ngAfterContentInit () {
-    console.log(this._slides);
     this._setupKeySubscriptions();
   }
 
   private _setupKeySubscriptions () {
     this._keyboardService.event$.subscribe(event => {
-      console.log(this._slides);
+      console.log(this.currentSlide, this._slides);
       if (event && event.code === 'ArrowRight') {
-        if (this.currentSlide < this._slides.length) {
-            this._navigationService.goToSlide(this.currentSlide++);
+        if (this.currentSlide < this._slides.length - 1) {
+            this._navigationService.goToSlide(++this.currentSlide);
         }
       }
 
       if (event && event.code === 'ArrowLeft') {
-        if (this.currentSlide < 0) {
-          this._navigationService.goToSlide(this.currentSlide--);
+        if (this.currentSlide > 0) {
+          this._navigationService.goToSlide(--this.currentSlide);
         }
       }
     });

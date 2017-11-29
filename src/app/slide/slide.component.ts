@@ -7,14 +7,8 @@ import { AppComponent } from '../app.component';
   styleUrls: ['./slide.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class SlideComponent implements OnInit {
+export class SlideComponent {
 
   @HostBinding('class.slide') true;
-
-  constructor(
-  ) {}
-
-  ngOnInit() {
-  }
 
 }
